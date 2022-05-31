@@ -1,7 +1,6 @@
+import { RefInteractingWithDom } from "./refInteractingWithDom";
 
-export default function App() {
-  return (
-    <div>
-    </div>
-  );
+function App() {
+  return <RefInteractingWithDom/>;
 }
+export default App;
