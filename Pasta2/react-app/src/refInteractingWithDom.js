@@ -1,4 +1,5 @@
 import { useEffect, useState,useRef } from "react";
+import FakeModal from "./fakeModal";
 
 export function RefInteractingWithDom() {
     const [showModal, setShowModal] = useState(false);
@@ -8,9 +9,7 @@ export function RefInteractingWithDom() {
         setShowModal(true);
     }
 
-    useEffect(() => {
-        inputRef.current?.focus(); 
-    }, [showModal])
+    
 
     return (
         <div>
@@ -19,13 +18,7 @@ export function RefInteractingWithDom() {
                 Clique aqui para informar seu email e não perder nenhuma novidade ;3
             </button>
             {
-                showModal && (
-                    <div>
-                        <label htmlFor="email">E-mail</label>
-                        <br />
-                        <input ref={inputRef} id="email" type="email" />
-                    </div>
-                )
+                showModal && <FakeModal forwardedRef={inputRef}/>
             }
         </div>
 
